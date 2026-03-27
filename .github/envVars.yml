@@ -1,0 +1,24 @@
+name: Environment Variables Demo
+on: workflow_dispatch:
+env:
+  GLOBAL_ENV: "global-value"
+jobs: 
+  demo:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "job-value"
+
+    steps:
+      - name: Print all env vars
+        run: |
+          echo "Global Environment Variable: $GLOBAL_ENV"
+          echo "Job Environment Variable: $JOB_ENV"
+
+      - name: Set step environment variable
+        env:
+          STEP_ENV: "step-value"  
+        run: |
+          echo "Step Environment Variable: $STEP_ENV"
+          echo "Accessing Global Environment Variable in Step: $GLOBAL_ENV"
+          echo "Accessing Job Environment Variable in Step: $JOB_ENV"
+        
