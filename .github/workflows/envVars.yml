@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Print global environment variable
         run: |
-        echo "URL Variable: $API_URL"
-        echo "MODE Variable: $API_MODE"
+          echo "URL Variable: $API_URL"
+          echo "MODE Variable: $API_MODE"
 
 
   demo:
