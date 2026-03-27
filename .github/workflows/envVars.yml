@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print global environment variable
+        env:
+          API_URL: ${ { vars.API_URL } }
+          API_MODE: ${ { vars.API_MODE } }
         run: |
           echo "URL Variable: $API_URL"
           echo "MODE Variable: $API_MODE"
