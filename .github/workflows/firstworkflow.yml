@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
 
             - name: Display runner information
               run: |
@@ -22,4 +22,14 @@ jobs:
                 echo "Event name: $GITHUB_EVENT_NAME"
                 echo "SHA: $GITHUB_SHA"
 
+            - name: Display installed tools
+              run: |
+                echo "Node version:"
+                node --version || echo "Node.js is not installed"
+                echo "Python version:"
+                python --version || echo "Python is not installed"
+                echo "Java version:"
+                java -version || echo "Java is not installed"
+                echo "Docker version:"
+                docker --version || echo "Docker is not installed"
         
