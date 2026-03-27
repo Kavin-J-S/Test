@@ -5,5 +5,9 @@ jobs:
         runs-on: ubuntu-latest
         if: github.refs == 'refs/heads/main'
         steps:
-            - name: Run on main branch
+            - name: Step 1
               run: echo "This workflow runs only on the main branch."
+
+            - name: Step 2
+              if: success() 
+              run: echo "Hello, the previous step was successful!"
