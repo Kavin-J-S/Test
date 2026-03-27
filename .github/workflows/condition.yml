@@ -1,0 +1,9 @@
+name: Condition Demo
+on: workflow_dispatch
+jobs:
+    condition-demo:
+        runs-on: ubuntu-latest
+        if: github.refs == 'refs/heads/main'
+        steps:
+            - name: Run on main branch
+              run: echo "This workflow runs only on the main branch."
