@@ -3,7 +3,6 @@ on: workflow_dispatch
 
 jobs:  
   print-matrix:  
-    runs-on: ubuntu-latest  
     strategy:  
       matrix:  
         os: [ubuntu-latest, windows-latest]
