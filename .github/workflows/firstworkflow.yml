@@ -33,3 +33,24 @@ jobs:
                 echo "Docker version:"
                 docker --version || echo "Docker is not installed"
         
+    test:
+        name: Test Job
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: Run Mock test
+              run: |
+                echo "Running unit test"
+                echo "all tests passes"
+            
+    notification:
+        name: Notification Job
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+            - name: Send notification
+              run: |
+                echo "Build and tests completed successfully!"
+
+
+
