@@ -11,9 +11,12 @@ jobs:
         env:
           API_URL: ${{vars.API_URL}}
           API_MODE: ${{vars.API_MODE}}
+          DB_PASSWORD: ${{secrets.DB_PASSWORD}}
         run: |
           echo "URL Variable: $API_URL"
           echo "MODE Variable: $API_MODE"
+          echo "DB_PASSWORD Variable: $DB_PASSWORD"
+          echo "Length of DB_PASSWORD: ${#DB_PASSWORD}"
 
 
   demo:
