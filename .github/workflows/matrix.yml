@@ -1,0 +1,19 @@
+name: Print matrix  
+on: workflow_dispatch  
+
+jobs:  
+  print-matrix:  
+    runs-on: ubuntu-latest  
+    strategy:  
+      matrix:  
+        os: [ubuntu-latest, windows-latest]
+        node: [18, 20]
+    
+    runs-on: ${{ matrix.os }}
+
+    steps:  
+      - name: Print matrix values  
+        run: |  
+          echo "Running on OS: ${{ matrix.os }}"  
+          echo "Using Node.js version: ${{ matrix.node }}"
+
