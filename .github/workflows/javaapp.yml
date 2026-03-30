@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build job
-    runs-on: ubunturunner
+    runs-on: [self-hosted, ubunturunner]
 
     steps:
       - name: checkout code
